@@ -26,9 +26,9 @@ for line in Lines:
                   total_area = total_area + area
 
 # print the total area of actuator body
-print (f"The total area of all triangles is {total_area }")
+print (f"The total area of all triangles is {total_area } square unit")
 
-
+# Area = 87 square unit
 
                   
             
