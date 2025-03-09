@@ -1,1 +1,1 @@
- print (func())
+time.sleep (2)
