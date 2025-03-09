@@ -1,1 +1,1 @@
-print(point)
+ print (func())
