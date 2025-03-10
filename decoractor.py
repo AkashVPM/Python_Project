@@ -2,18 +2,20 @@ import time
 import logging
 
 def clock (func):
-      def warp ():
+      def warp (*args, **kwgs):
             s_t = time.time()   # s_t = start_time 
-            res = func()
+            res = func(*args, **kwgs)
             e_t = time.time()   # e_t = End_time
-            return (f"runstart time is {s_t} run end time is {e_t} The time to run the function is {(e_t - s_t)} seconds")
+            print (f"runstart time is {s_t} run end time is {e_t} The time to run the function is {(e_t - s_t)} seconds")
+            return res
       return warp
 
 def log_call (func):
-      def warp():
-            res = func()
+      def warp(*args, **kwgs):
+            res = func(*args, **kwgs)
             log = logging.info(f"Function {func.__name__} was called")
-            return log
+            print(log)
+            return res
       return warp
 
 @clock
