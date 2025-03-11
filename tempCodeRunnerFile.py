@@ -1,1 +1,1 @@
-time.sleep (2)
+print (next(fun))
