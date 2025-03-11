@@ -11,10 +11,17 @@ def clock (func):
       return warp
 
 def log_call (func):
+<<<<<<< HEAD
       def warp():
             res = func(*args, **kwgs)
             log = logging.info(f"Function {func.__name__} was called")
             print (log)
+=======
+      def warp(*args, **kwgs):
+            res = func(*args, **kwgs)
+            log = logging.info(f"Function {func.__name__} was called")
+            print(log)
+>>>>>>> f85d56b0e0ec0d14d29a8b68ac0deefe3b834167
             return res
       return warp
 

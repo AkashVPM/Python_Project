@@ -3,7 +3,7 @@ def call (func):
             i = func(*args,**kwgs)
             print ("okay")
             def warp_2 (*args, **kwgs):
-                  i = func(*args, **kwgs)
+                  i = warp(*args, **kwgs)
                   print ("not okay")
                   return i 
             return i 
