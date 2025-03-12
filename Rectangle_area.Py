@@ -21,7 +21,7 @@ def triangle (a,b,c):
 
 Po = [1,0,0],[0,1,0],[1,1,0], [0,0,0]   
 fun_1 = triangle (Po[0],Po[1],Po[2])
-fun_2 = triangle (Po[3],Po[1],Po[2])
+fun_2 = triangle (Po[1],Po[2],Po[3])
 
 
 with open ("C:/Akash S/Rectangle_poins.csv","w") as f :
