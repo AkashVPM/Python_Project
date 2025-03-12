@@ -1,1 +1,1 @@
-print (next(fun))
+    yield from triangle(b,c,d)
