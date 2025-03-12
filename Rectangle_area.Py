@@ -1,3 +1,5 @@
+# Author : Akash S
+
 import random
 
 def triangle (a,b,c):
