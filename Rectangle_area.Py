@@ -1,7 +1,5 @@
 import random
-
-def rectangle (a,b,c,d):
-    def triangle (a,b,c):
+def triangle (a,b,c):
         while True:
             r1 = random.random()
             r2 = (1-r1)*random.random()
@@ -16,14 +14,17 @@ def rectangle (a,b,c,d):
                 point_3 =  r1*z1 + r2*z2 + r3*z3
 
                 yield [point_1,point_2,point_3]
+
+def rectangle (a,b,c,d):
     tria_1 = triangle(a,b,c)
     tria_2 = triangle(b,c,d)
     while True:
-        yield next(tria_1) + next (tria_2)
+        yield next(tria_1)
+        yield next (tria_2)
           
 fun = rectangle ([1,0,0],[0,1,0],[1,1,0], [0,0,0])   
 
 with open ("C:/Akash S/Rectangle_poins.csv","w") as f :
     for i in range (10000):
         p = next(fun)
-        f.write(str(p[0])+ ',' +str(p[1])+ ','+ str(p[2])+ ',' +str(p[3])+ ',' +str(p[4])+ ','+ str(p[5])+  '\n')
+        f.write(str(p[0])+ ',' +str(p[1])+ ','+ str(p[2])+  '\n')
