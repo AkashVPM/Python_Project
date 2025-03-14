@@ -14,6 +14,7 @@ def triangle (a,b,c):
                 point_3 =  r1*z1 + r2*z2 + r3*z3
 
                 yield [point_1,point_2,point_3]
+<<<<<<< HEAD
 
 def rectangle (a,b,c,d):
     tria_1 = triangle(b,c,d)
@@ -27,3 +28,19 @@ def write_1 (fun):
         for i in range (10000):
             p = next(fun)
             f.write(str(p[0])+ ',' +str(p[1])+ ','+ str(p[2])+  '\n')
+=======
+
+def rectangle (a,b,c,d):
+    tria_1 = triangle(a,b,c)
+    tria_2 = triangle(b,c,d)
+    while True:
+        yield next(tria_1)
+        yield next (tria_2)
+          
+fun = rectangle ([1,0,0],[0,1,0],[1,1,0], [0,0,0])   
+
+with open ("C:/Akash S/Rectangle_poins.csv","w") as f :
+    for i in range (10000):
+        p = next(fun)
+        f.write(str(p[0])+ ',' +str(p[1])+ ','+ str(p[2])+  '\n')
+>>>>>>> dc57b9fba6dd3a86e3ebdd101dabe3939689ac98
