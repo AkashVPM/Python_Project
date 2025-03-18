@@ -1,25 +1,52 @@
 from hwx import *
 import os 
-a = 0
-m = 1
 
-def num_1 (): return 1
-def num_2 (): return 2
-def num_3 (): return 3
-def num_4 (): return 4
-def num_5 (): return 5
-def num_6 (): return 6
-def num_7 (): return 7
-def num_8 (): return 8
-def num_9 (): return 9
-def num_0 (): return 0
-def flo (*a): return float(*a)
-def equ (): return stop 
-def add (*a): return (a + num)
-def sub (*a): return (a - num)
-def mul (*a): return (m * num)
-def div (*a): return (m / num)
-
+a = ""
+def num(n):
+    global a
+    a += str(n)
+    gui.tellUser(a)
+def add (): 
+    global a 
+    a += "+"
+    gui.tellUser(a)
+def sub (): 
+    global a 
+    a += "-"
+    gui.tellUser(a)
+def mul (): 
+    global a 
+    a += "*"
+    gui.tellUser(a)
+def equ (): 
+    global a 
+    a = str(eval(a))
+    gui.tellUser(a)
+def div (): 
+    global a 
+    a += "/"
+    gui.tellUser(a)
+def flo ():
+    global a 
+    a += "."
+    gui.tellUser(a)
+def clear ():
+    global a 
+    a = ""
+    gui.tellUser(a)
+def open_bracket ():
+    global a 
+    a += "("
+    gui.tellUser(a)
+def close_bracket ():
+    global a 
+    a += ")"
+    gui.tellUser(a)
+def deleted ():
+    global a 
+    a = a[:-1]
+    gui.tellUser(a)
+    
 button_grid = gui.GridFrame((
     gui.PushButton("1", command=lambda: num(1)),
     gui.PushButton("2", command=lambda: num(2)),
@@ -36,12 +63,15 @@ button_grid = gui.GridFrame((
     gui.PushButton("9", command=lambda: num(9)),
     gui.PushButton("*", command=mul),
 
-    gui.PushButton("C", command=clear),
+    gui.PushButton("dot", command=flo),
     gui.PushButton("0", command=lambda: num(0)),
     gui.PushButton("=", command=equ),
     gui.PushButton("/", command=div),
+
+    gui.PushButton("c", command=clear),
+    gui.PushButton("(", command=open_bracket),
+    gui.PushButton(")", command=close_bracket),
+    gui.PushButton("del", command=deleted),
 ), nrows=4, border=5, spacing=5)
 
-
 show(button_grid)
-
