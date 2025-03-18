@@ -30,4 +30,4 @@ def quard_point (*args):
         fun = Rectangle_area.rectangle(*check)
         Rectangle_area.write_1 (fun)
              
-quard_point ([0.5,0.5,0],[1,0,0],[0,0,0],[0,1,0] )
+quard_point ([1,0,0],[0,0,0],[0,1,0],[0.1,0.1,0])

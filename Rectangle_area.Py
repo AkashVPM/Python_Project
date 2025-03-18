@@ -17,13 +17,13 @@ def triangle (a,b,c):
 
 def rectangle (a,b,c,d):
     tria_1 = triangle(b,c,d)
-    tria_2 = triangle(a,d,d)
+    tria_2 = triangle(a,b,d)
     while True:
         yield next(tria_1)
         yield next (tria_2)
           
 def write_1 (fun): 
-    with open ("D:/Rectangle_poins_1.csv","w") as f :
+    with open ("C:\Akash S\Rectangle_poins.csv","w") as f :
         for i in range (10000):
             p = next(fun)
             f.write(str(p[0])+ ',' +str(p[1])+ ','+ str(p[2])+  '\n')

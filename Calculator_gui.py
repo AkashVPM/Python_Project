@@ -1,57 +1,24 @@
 from hwx import *
 import os 
+a = 0
+m = 1
 
-a = ""
-m = ""
-
-def num(n):
-    global a
-    a += str(n)
-    display.set(a)
-
-def clear():
-    global a, m
-    a = ""
-    m = ""
-    display.set("")
-
-def add():
-    global a, m
-    m = a + "+"
-    a = ""
-    display.set(m)
-
-def sub():
-    global a, m
-    m = a + "-"
-    a = ""
-    display.set(m)
-
-def mul():
-    global a, m
-    m = a + "*"
-    a = ""
-    display.set(m)
-
-def div():
-    global a, m
-    m = a + "/"
-    a = ""
-    display.set(m)
-
-def equ():
-    global a, m
-    m += a
-    try:
-        result = str(eval(m))
-        display.set(result)
-        a = result  # Store result for further calculations
-    except:
-        display.set("Error")
-        a = ""
-        m = ""
-
-display = gui.TextBox(text="", width=20, readonly=True)
+def num_1 (): return 1
+def num_2 (): return 2
+def num_3 (): return 3
+def num_4 (): return 4
+def num_5 (): return 5
+def num_6 (): return 6
+def num_7 (): return 7
+def num_8 (): return 8
+def num_9 (): return 9
+def num_0 (): return 0
+def flo (*a): return float(*a)
+def equ (): return stop 
+def add (*a): return (a + num)
+def sub (*a): return (a - num)
+def mul (*a): return (m * num)
+def div (*a): return (m / num)
 
 button_grid = gui.GridFrame((
     gui.PushButton("1", command=lambda: num(1)),
@@ -77,3 +44,4 @@ button_grid = gui.GridFrame((
 
 
 show(button_grid)
+
