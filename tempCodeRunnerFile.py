@@ -1,1 +1,1 @@
-    yield from triangle(b,c,d)
+10
