@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-dx = 0.01  # Spatial step
-dt = 0.0005  # Time step
-L = 1.0  # Length of string
+dx = 0.01  
+dt = 0.0005  
+L = 1.0  
 
 u_time = np.zeros((0, 3))  
 extent = np.linspace(0, L)
