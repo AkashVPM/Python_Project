@@ -5,20 +5,22 @@ dx = 0.01
 dt = 0.0005  
 L = 1.0  
 
-u_time = np.zeros((0, 3))  
-extent = np.linspace(0, L)
+N = int(L / dx)  
 
-N = int(1/0.01)
+u_time = np.zeros((0, 3))  
+u_pos = np.zeros((0, 3))  
+extent = np.linspace(0, L, N)  
 
 plt.figure()
 for i in range(10000000):
-    for j in range(1,N):
-        u_time[j, 2] = ((u_time[j + 1, 1] - 2 * u_time[j, 1] + u_time[j - 1, 1]) * dt ** 2 / dx ** 2) + 2 * u_time[j, 1] - u_time[j, 0]
+    for j in range(1, N):  
+        u_time[j, 2] = ((u_pos[j + 1] - 2 * u_pos[j] + u_pos[j - 1]) * dt ** 2 / dx ** 2) + \
+                        2 * u_time[j, 1] - u_time[j, 0] 
     
-    u_time[0, 2] = 0
-    u_time[-1, 2] = 0
     
-    u_time[:, 0], u_time[:, 1] = u_time[:, 1], u_time[:, 2]
+    u_time[0, 2] = 0  
+    u_time[-1, 2] = 0  
+
 
     if i % 50 == 1:
         plt.clf()
