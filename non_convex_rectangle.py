@@ -6,8 +6,7 @@ def rectangle (a,b,c,d):
                   r1 = random.random()
                   r2 = (1-r1)*random.random()
                   r3 = 1-r1-r2
-                  if r1 + r2 + r3  == 1 :
-                        
+                  if r1 + r2 + r3  == 1 :  
                         p = a,b,c 
                         [x1,y1,z1], [x2,y2,z2], [x3,y3,z3] = p 
 
