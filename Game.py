@@ -1,18 +1,20 @@
 from hwx import gui
 from hwx.gui.XyPlot import XyPlot
-import time
+import random 
 
-plot = XyPlot(title="Game", size=(10, 5))
+number = [ i for i in range (10)] 
+toss = random.choice(number)
+print (toss)
+
+upper_index = [gui.Button() for i in range (10)]
+last_index =[gui.Button() for i in range (10)] 
+last_index [1] = gui.Button(icon="msobjbrowser.png",)
+if toss % 3 == 0:
+      last_index [-1] = gui.Button(icon= "glyphDeleteStrip-16.png",)
 
 
-plot.xlimits = (0, 4.0)
-plot.ylimits = (0, 1.0)
-x = [i for i in range (10)]
-y = [0.2 for i in range (10)]
-for i in range (1,10):
-      j = i+1
-      x = x[i]+x[j]
-      y = y[i]+y[j]
-      plot.addCurve(x=x, y=y, fit=False, draggable=False, color = "green")
-      # x = x[0:0]
-gui.show(plot)
+layout = gui.VFrame(
+      gui.HFrame (upper_index),
+      gui.HFrame (last_index), border = 100, spacing = 10, margin = 50)
+
+gui.show (layout)

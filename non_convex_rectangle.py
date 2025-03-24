@@ -22,3 +22,4 @@ with open ("C:/Akash S/Rectangle_poins.csv","w") as f :
     for i in range (10000):
         p = next(fun)
         f.write(str(p[0])+ ',' +str(p[1])+ ','+ str(q[0])+ ',' +'\n')
+        
