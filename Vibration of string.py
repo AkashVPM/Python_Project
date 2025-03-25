@@ -31,7 +31,7 @@ for j in range(10000000):
 ##        f =(dx**2*dam*(u_prev[j]))  # good
 ##        f2= 2*dt*(u_now[j + 1] - 2 * u_now[j] + u_now[j - 1]) # good
 ##        f3= (2 * u_now[j] - u_prev[j]) #good
-##        u = (s * (-f+f2))+f3 
+##        u = (s * (f+f2))+f3 
 ##        u_next[j] = u - (dam*u*dt/2)
 
     u_prev = u_now[:]
