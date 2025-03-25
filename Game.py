@@ -1,6 +1,7 @@
 from hwx import gui
 from hwx.gui.XyPlot import XyPlot
 import random 
+gui.addresource path ("file title)
 
 # random function to create obstacle 
 number = [ i for i in range (10)] 
