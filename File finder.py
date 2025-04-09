@@ -8,7 +8,7 @@ def list_folders(parent_folder, destination_folder, file_name):
             try:
                 new_file_name = f'run_{run_counter}.h3d'
                 destination_file = os.path.join(destination_folder, new_file_name)
-                file_path = os.path.join(root, 'DOE_morph.h3d')
+                file_path = os.path.join(root, file_name)
                 shutil.copy(file_path, destination_file) 
                 run_counter += 1
                 print(f"{file_name} found in folder: {root} and copied to {destination_folder} as {new_file_name}")
