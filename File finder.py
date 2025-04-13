@@ -6,7 +6,7 @@ def list_folders(parent_folder, destination_folder, file_name):
     for root, dirs, files in os.walk(parent_folder):
         if file_name in files:
             try:
-                new_file_name = f'run_{run_counter}.h3d'
+                new_file_name = f'run_{run_counter}.h3d'       # here change the file format to save the file 
                 destination_file = os.path.join(destination_folder, new_file_name)
                 file_path = os.path.join(root, file_name)
                 shutil.copy(file_path, destination_file) 
